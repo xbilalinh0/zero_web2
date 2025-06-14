@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="mobile-header">
+        <div class="mobile-header-content">
+            <img src="Images/3.png" alt="Zero Games Logo" class="mobile-logo">
+            <button class="mobile-menu-btn" aria-label="Open menu">
+                <svg width="32" height="32" viewBox="0 0 24 24">
+                    <rect y="4" width="24" height="2" rx="1"/>
+                    <rect y="11" width="24" height="2" rx="1"/>
+                    <rect y="18" width="24" height="2" rx="1"/>
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="#home" class="mobile-link">
+                <span class="mobile-icon">
+                    <!-- Home SVG -->
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 12L12 5l9 7" />
+                        <path d="M5 10v9a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1v-9" />
+                    </svg>
+                </span>
+                <span class="mobile-text">Home</span>
+            </a>
+            <a href="#about" class="mobile-link">
+                <span class="mobile-icon">
+                    <!-- Info SVG -->
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12" y2="8"/>
+                    </svg>
+                </span>
+                <span class="mobile-text">About</span>
+            </a>
+            <a href="#announcements" class="mobile-link">
+                <span class="mobile-icon">
+                    <!-- Bell SVG -->
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 16v-5a6 6 0 1 0-12 0v5" />
+                        <path d="M5 16h14" />
+                        <path d="M10 20a2 2 0 0 0 4 0" />
+                    </svg>
+                </span>
+                <span class="mobile-text">Announcements</span>
+            </a>
+            <a href="#contact" class="mobile-link">
+                <span class="mobile-icon">
+                    <!-- Mail SVG -->
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="5" width="18" height="14" rx="2"/>
+                        <polyline points="3 7 12 13 21 7"/>
+                    </svg>
+                </span>
+                <span class="mobile-text">Contact</span>
+            </a>
+        </nav>
+    </header>
+    <aside class="sidebar-menu">
+        <div class="sidebar-logo">
+            <img src="Images/3.png" alt="Zero Games Logo" class="logo-image">
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#home" class="sidebar-link active">
+                <span class="sidebar-icon">
+                    <!-- Home SVG -->
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 12L12 5l9 7"/>
+                        <path d="M5 10v9a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1v-9"/>
+                    </svg>
+                </span>
+                <span class="sidebar-text">Home</span>
+            </a>
+            <a href="#announcements" class="sidebar-link">
+<span class="sidebar-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 16v-5a6 6 0 1 0-12 0v5" />
+                            <path d="M5 16h14" />
+                            <path d="M10 20a2 2 0 0 0 4 0" />
+                        </svg>
+                    </span>
+                <span class="sidebar-text">Announcements</span>
+            </a>
+            <a href="#about" class="sidebar-link">
+                <span class="sidebar-icon">
+                    <!-- Info SVG -->
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12" y2="8"/>
+                    </svg>
+                </span>
+                <span class="sidebar-text">About</span>
+            </a>
+            <a href="#contact" class="sidebar-link">
+                <span class="sidebar-icon">
+                    <!-- Mail SVG -->
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="5" width="18" height="14" rx="2"/>
+                        <polyline points="3 7 12 13 21 7"/>
+                    </svg>
+                </span>
+                <span class="sidebar-text">Contact</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer-text">
+            @Zero Games Studio
+        </div>
+    </aside>
+    <section id="home" class="page-section">Contenido Home</section>
+<section id="about" class="page-section" style="display:none;">Contenido About US</section>
+<section id="announcements" class="page-section" style="display:none;">Contenido Announcements</section>
+<section id="contact" class="page-section" style="display:none;">Contenido Contact</section>
+<script src="scripts.js"></script>
+</body>
+</html>
