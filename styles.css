@@ -203,8 +203,8 @@ body {
 
 .page-section {
     transition: margin-left 0.35s cubic-bezier(.68,-0.55,.27,1.55);
-    margin-left: 90px; /* igual que body por defecto */
-    padding: 40px 24px;
+    margin-left: 0px; /* igual que body por defecto */
+    padding: 0px 0px;
     min-height: 100vh;
     box-sizing: border-box;
 }
@@ -214,6 +214,7 @@ body {
 .sidebar-menu:focus-within ~ .page-section {
     margin-left: 220px;
 }
+
 
 @media (max-width: 700px) {
     .sidebar-menu {
@@ -366,5 +367,118 @@ body {
         margin-left: 0 !important;
         padding-top: 24px;
     }
+}
+
+/* Centrado del contenido Home */
+#home {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 0;
+    background: transparent;
+}
+
+/* El div y la imagen centrados */
+#imagen1-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-60px);
+}
+
+.home-image {
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform: scale(1.2);
+}
+
+/* Ajusta el margen izquierdo según el sidebar */
+@media (min-width: 801px) {
+    #home {
+        margin-left: 90px; /* igual que el sidebar encogido */
+        transition: margin-left 0.35s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    .sidebar-menu:hover ~ #home,
+    .sidebar-menu:focus-within ~ #home {
+        margin-left: 220px; /* igual que el sidebar expandido */
+    }
+}
+
+/* Responsive: sin margen y centrado */
+@media (max-width: 800px) {
+    #home {
+        margin-left: 0 !important;
+        padding-top: 24px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#home {
+  --s: 100px; /* control the size */
+  --c1: #c5c5c5;
+  --c2: #35d835;
+  
+  --_s: calc(2*var(--s)) calc(2*var(--s));
+  --_g: var(--_s) conic-gradient(at 40% 40%,#0000 75%,var(--c1) 0);
+  --_p: var(--_s) conic-gradient(at 20% 20%,#0000 75%,var(--c2) 0);
+  background:
+    calc( .9*var(--s)) calc( .9*var(--s))/var(--_p),
+    calc(-.1*var(--s)) calc(-.1*var(--s))/var(--_p),
+    calc( .7*var(--s)) calc( .7*var(--s))/var(--_g),
+    calc(-.3*var(--s)) calc(-.3*var(--s))/var(--_g),
+    conic-gradient(from 90deg at 20% 20%,var(--c2) 25%,var(--c1) 0) 
+     0 0/var(--s) var(--s);
+  animation: m 3s infinite;
+}
+@keyframes m {
+  0% {
+   background-position: 
+    calc( .9*var(--s)) calc( .9*var(--s)),
+    calc(-.1*var(--s)) calc(-.1*var(--s)),
+    calc( .7*var(--s)) calc( .7*var(--s)),
+    calc(-.3*var(--s)) calc(-.3*var(--s)),0 0
+  }
+  25% {
+   background-position: 
+    calc(1.9*var(--s)) calc( .9*var(--s)),
+    calc(-1.1*var(--s)) calc(-.1*var(--s)),
+    calc(1.7*var(--s)) calc( .7*var(--s)),
+    calc(-1.3*var(--s)) calc(-.3*var(--s)),0 0
+  }
+  50% {
+   background-position: 
+    calc(1.9*var(--s)) calc(-.1*var(--s)),
+    calc(-1.1*var(--s)) calc( .9*var(--s)),
+    calc(1.7*var(--s)) calc(-.3*var(--s)),
+    calc(-1.3*var(--s)) calc( .7*var(--s)),0 0
+  }
+  75% {
+   background-position: 
+    calc(2.9*var(--s)) calc(-.1*var(--s)),
+    calc(-2.1*var(--s)) calc( .9*var(--s)),
+    calc(2.7*var(--s)) calc(-.3*var(--s)),
+    calc(-2.3*var(--s)) calc( .7*var(--s)),0 0
+  }
+  100% {
+   background-position: 
+    calc(2.9*var(--s)) calc(-1.1*var(--s)),
+    calc(-2.1*var(--s)) calc(1.9*var(--s)),
+    calc(2.7*var(--s)) calc(-1.3*var(--s)),
+    calc(-2.3*var(--s)) calc(1.7*var(--s)),0 0
+  }
 }
 

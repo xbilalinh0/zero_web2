@@ -41,10 +41,15 @@ document.addEventListener('DOMContentLoaded', function () {
             mobileNav.classList.toggle('open');
         });
         mobileLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileNav.classList.remove('open');
-                mobileLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Oculta todas las secciones
+                document.querySelectorAll('.page-section').forEach(sec => sec.style.display = 'none');
+                // Muestra la sección correspondiente
+                const target = this.getAttribute('href');
+                document.querySelector(target).style.display = '';
+                // Opcional: cierra el menú móvil si es tipo drawer
+                document.querySelector('.mobile-nav').classList.remove('open');
             });
         });
         document.addEventListener('click', function(e) {
@@ -54,3 +59,5 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+    
+    
