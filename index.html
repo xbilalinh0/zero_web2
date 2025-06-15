@@ -4,13 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zero Games</title>
+    <!-- Enlace a los estilos principales -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="mobile-header">
+  <!-- Fondo animado global -->
+  <div class="background-animado"></div>
+
+  <!-- Sección principal Home -->
+  <section id="home" class="page-section">
+    <!-- Imagen principal de Home -->
+    <div id="imagen1-home">
+        <img src="Images/1.png" alt="Zero Games Home Image" class="home-image">
+    </div>
+    <!-- Contenedor de las tarjetas de presentación -->
+    <div class="nuevo-contenido" style="display:flex;">
+        <!-- Tarjeta 1 -->
+        <div class="tarjeta-bonita" id="tarjeta-bonita1">
+            <img src="Images/Zero.png" alt="Imagen tarjeta" class="tarjeta-img">
+            <div class="tarjeta-texto">
+                <h2>Zero Games Studio</h2>
+                <p>
+                    Bienvenido@ al sitio web de Zero Games Studio,
+                    aqui se encuentran los ultimos anuncios,
+                    noticias y actualizaciones sobre nuestros juegos.
+                    Explora nuestro contenido, descubre nuestros proyectos
+                    y mantente al tanto de las novedades que tenemos para ti.
+                    Si tienes alguna pregunta o sugerencia,
+                    no dudes en contactarnos a través de nuestra sección de contacto.
+                    Tambien puedes encontrar nuestras redes sociales para comunicarte con nosotros.
+                    Gracias por visitarnos y esperamos que disfrutes de tu experiencia en nuestro sitio web.
+                </p>
+            </div>        
+        </div>
+        <!-- Tarjeta 2 -->
+        <div class="tarjeta-bonita" id="tarjeta-bonita2">
+            <img src="Images/2.png" alt="Imagen tarjeta" class="tarjeta-img">
+            <div class="tarjeta-texto">
+                <h2>¿Quien es somos?</h2>
+                <p>
+                    Somos un grupo de desarrolladores apasionados por los videojuegos, 
+                    dedicados a crear experiencias únicas y emocionantes. 
+                    Nuestro objetivo es llevar la diversión y la innovación 
+                    a cada uno de nuestros juegos, ofreciendo algo especial 
+                    para todos los jugadores.
+                </p>
+            </div>        
+        </div>
+    </div>
+  </section>
+
+  <!-- Encabezado y menú móvil -->
+  <header class="mobile-header">
         <div class="mobile-header-content">
             <img src="Images/3.png" alt="Zero Games Logo" class="mobile-logo">
             <button class="mobile-menu-btn" aria-label="Open menu">
+                <!-- Icono hamburguesa -->
                 <svg width="32" height="32" viewBox="0 0 24 24">
                     <rect y="4" width="24" height="2" rx="1"/>
                     <rect y="11" width="24" height="2" rx="1"/>
@@ -18,33 +67,36 @@
                 </svg>
             </button>
         </div>
+        <!-- Navegación móvil -->
         <nav class="mobile-nav">
             <a href="#home" class="mobile-link">
                 <span class="mobile-icon">
-                    <!-- Home SVG -->
+                    <!-- Icono Home -->
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M3 12L12 5l9 7" />
                         <path d="M5 10v9a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1v-9" />
                     </svg>
                 </span>
-                <span class="mobile-text">Home</span>
+                <span class="mobile-text">HOME</span>
             </a>
-            <a href="#about" class="mobile-link">
+            <a href="#videojuegos" class="mobile-link">
                 <span class="mobile-icon">
-                    <!-- Info SVG -->
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"/>
-                        <line x1="12" y1="16" x2="12" y2="12"/>
-                        <line x1="12" y1="8" x2="12" y2="8"/>
+                    <!-- SVG mando de consola -->
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="10" width="18" height="7" rx="3.5"/>
+                        <circle cx="8" cy="13.5" r="1"/>
+                        <circle cx="16" cy="13.5" r="1"/>
+                        <line x1="12" y1="13.5" x2="12" y2="15.5"/>
+                        <line x1="10.5" y1="14.5" x2="13.5" y2="14.5"/>
                     </svg>
                 </span>
-                <span class="mobile-text">About</span>
+                <span class="mobile-text">VIDEOGAMES</span>
             </a>
-            <a href="#announcements" class="mobile-link">
+             <a href="#announcements" class="mobile-link">
                 <span class="mobile-icon">
-                    <!-- Bell SVG -->
+                    <!-- Icono anuncios -->
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M18 16v-5a6 6 0 1 0-12 0v5" />
@@ -52,21 +104,35 @@
                         <path d="M10 20a2 2 0 0 0 4 0" />
                     </svg>
                 </span>
-                <span class="mobile-text">Announcements</span>
+                <span class="mobile-text">ANNOUNCEMENTS</span>
+            </a>
+            <a href="#about" class="mobile-link">
+                <span class="mobile-icon">
+                    <!-- Icono About -->
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12" y2="8"/>
+                    </svg>
+                </span>
+                <span class="mobile-text">ABOUT</span>
             </a>
             <a href="#contact" class="mobile-link">
                 <span class="mobile-icon">
-                    <!-- Mail SVG -->
+                    <!-- Icono Contacto -->
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="5" width="18" height="14" rx="2"/>
                         <polyline points="3 7 12 13 21 7"/>
                     </svg>
                 </span>
-                <span class="mobile-text">Contact</span>
+                <span class="mobile-text">CONTACT</span>
             </a>
         </nav>
     </header>
+
+    <!-- Sidebar lateral para escritorio -->
     <aside class="sidebar-menu">
         <div class="sidebar-logo">
             <img src="Images/3.png" alt="Zero Games Logo" class="logo-image">
@@ -74,16 +140,31 @@
         <nav class="sidebar-nav">
             <a href="#home" class="sidebar-link active">
                 <span class="sidebar-icon">
-                    <!-- Home SVG -->
+                    <!-- Icono Home -->
                     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M3 12L12 5l9 7"/>
                         <path d="M5 10v9a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1v-9"/>
                     </svg>
                 </span>
-                <span class="sidebar-text">Home</span>
+                <span class="sidebar-text">HOME</span>
+            </a>
+            <a href="#videojuegos" class="sidebar-link">
+                <span class="sidebar-icon">
+                    <!-- SVG mando de consola -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="10" width="18" height="7" rx="3.5"/>
+                        <circle cx="8" cy="13.5" r="1"/>
+                        <circle cx="16" cy="13.5" r="1"/>
+                        <line x1="12" y1="13.5" x2="12" y2="15.5"/>
+                        <line x1="10.5" y1="14.5" x2="13.5" y2="14.5"/>
+                    </svg>
+                </span>
+                <span class="sidebar-text">VIDEOGAMES</span>
             </a>
             <a href="#announcements" class="sidebar-link">
                     <span class="sidebar-icon">
+                        <!-- Icono anuncios -->
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M18 16v-5a6 6 0 1 0-12 0v5" />
@@ -91,42 +172,44 @@
                             <path d="M10 20a2 2 0 0 0 4 0" />
                         </svg>
                     </span>
-                <span class="sidebar-text">Announcements</span>
+                <span class="sidebar-text">ANNOUNCEMENTS</span>
             </a>
             <a href="#about" class="sidebar-link">
                 <span class="sidebar-icon">
-                    <!-- Info SVG -->
+                    <!-- Icono About -->
                     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"/>
                         <line x1="12" y1="16" x2="12" y2="12"/>
                         <line x1="12" y1="8" x2="12" y2="8"/>
                     </svg>
                 </span>
-                <span class="sidebar-text">About</span>
+                <span class="sidebar-text">ABOUT</span>
             </a>
             <a href="#contact" class="sidebar-link">
                 <span class="sidebar-icon">
-                    <!-- Mail SVG -->
+                    <!-- Icono Contacto -->
                     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="3" y="5" width="18" height="14" rx="2"/>
                         <polyline points="3 7 12 13 21 7"/>
                     </svg>
                 </span>
-                <span class="sidebar-text">Contact</span>
+                <span class="sidebar-text">CONTACT</span>
             </a>
         </nav>
         <div class="sidebar-footer-text">
             @Zero Games Studio
         </div>
     </aside>
-    <section id="home" class="page-section">        
-        <div id="imagen1-home">
-            <img src="Images/1.png" alt="Zero Games Home Image" class="home-image">
-        </div>
+
+    <!-- Otras secciones del sitio -->
+    <section id="about" class="page-section" style="display:none;">Contenido About US</section>
+    <section id="announcements" class="page-section" style="display:none;">Contenido Announcements</section>
+    <section id="contact" class="page-section" style="display:none;">Contenido Contact</section>
+    <section id="videojuegos" class="page-section" style="display:none;">
+        <h2>Videojuegos</h2>
+        <p>Aquí irá la información sobre nuestros videojuegos.</p>
     </section>
-<section id="about" class="page-section" style="display:none;">Contenido About US</section>
-<section id="announcements" class="page-section" style="display:none;">Contenido Announcements</section>
-<section id="contact" class="page-section" style="display:none;">Contenido Contact</section>
-<script src="scripts.js"></script>
+    <!-- Script principal -->
+    <script src="scripts.js"></script>
 </body>
 </html>

@@ -1,14 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
 
+/* Ajustes generales de html y body para ocupar toda la pantalla y evitar scroll horizontal */
 html, body {
-    overflow: hidden;
     height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+#home, #home * {
+    font-family: Arial, sans-serif;
+}
+.sidebar-menu,
+.sidebar-link,
+.sidebar-text,
+.sidebar-footer-text,
+.mobile-header,
+.mobile-link,
+.mobile-text {
+    font-family: 'Bubblegum Sans', Arial, sans-serif !important;
+}
+/* Fondo animado fijo que ocupa toda la pantalla, debajo del contenido */
+.background-animado {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    /* Fondo animado con CSS puro */
+    --s: 100px; /* tamaño del patrón */
+    --c1: #fffffff5;
+    --c2: #35d835;
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g: var(--_s) conic-gradient(at 40% 40%,#0000 75%,var(--c1) 0);
+    --_p: var(--_s) conic-gradient(at 20% 20%,#0000 75%,var(--c2) 0);
+    background:
+      calc( .9*var(--s)) calc( .9*var(--s))/var(--_p),
+      calc(-.1*var(--s)) calc(-.1*var(--s))/var(--_p),
+      calc( .7*var(--s)) calc( .7*var(--s))/var(--_g),
+      calc(-.3*var(--s)) calc(-.3*var(--s))/var(--_g),
+      conic-gradient(from 90deg at 20% 20%,var(--c2) 25%,var(--c1) 0) 
+       0 0/var(--s) var(--s);
+    animation: m 3s infinite;
+}
+/* Animación del fondo */
+@keyframes m {
+  0% {
+   background-position: 
+    calc( .9*var(--s)) calc( .9*var(--s)),
+    calc(-.1*var(--s)) calc(-.1*var(--s)),
+    calc( .7*var(--s)) calc( .7*var(--s)),
+    calc(-.3*var(--s)) calc(-.3*var(--s)),0 0
+  }
+  25% {
+   background-position: 
+    calc(1.9*var(--s)) calc( .9*var(--s)),
+    calc(-1.1*var(--s)) calc(-.1*var(--s)),
+    calc(1.7*var(--s)) calc( .7*var(--s)),
+    calc(-1.3*var(--s)) calc(-.3*var(--s)),0 0
+  }
+  50% {
+   background-position: 
+    calc(1.9*var(--s)) calc(-.1*var(--s)),
+    calc(-1.1*var(--s)) calc( .9*var(--s)),
+    calc(1.7*var(--s)) calc(-.3*var(--s)),
+    calc(-1.3*var(--s)) calc( .7*var(--s)),0 0
+  }
+  75% {
+   background-position: 
+    calc(2.9*var(--s)) calc(-.1*var(--s)),
+    calc(-2.1*var(--s)) calc( .9*var(--s)),
+    calc(2.7*var(--s)) calc(-.3*var(--s)),
+    calc(-2.3*var(--s)) calc( .7*var(--s)),0 0
+  }
+  100% {
+   background-position: 
+    calc(2.9*var(--s)) calc(-1.1*var(--s)),
+    calc(-2.1*var(--s)) calc(1.9*var(--s)),
+    calc(2.7*var(--s)) calc(-1.3*var(--s)),
+    calc(-2.3*var(--s)) calc(1.7*var(--s)),0 0
+  }
 }
 
-.sidebar-menu, .sidebar-link, .sidebar-username, .sidebar-text {
-    font-family: 'Bubblegum Sans', Arial, sans-serif;
-}
-
+/* Variables de color y estilos para el sidebar */
 :root {
     --lime: #90f92d;
     --sidebar-bg: #181818;
@@ -17,11 +92,13 @@ html, body {
     --sidebar-text: #f5f5f5;
 }
 
+/* Transición suave para el margen del body al expandir el sidebar */
 body {
     transition: margin-left 0.35s cubic-bezier(.68,-0.55,.27,1.55);
     margin-left: 20px; /* ancho del sidebar encogido */
 }
 
+/* Sidebar lateral fijo a la izquierda */
 .sidebar-menu {
     position: fixed;
     top: 0;
@@ -39,12 +116,14 @@ body {
     overflow-x: hidden;
 }
 
+/* Sidebar expandido al pasar el mouse */
 .sidebar-menu:hover,
 .sidebar-menu:focus-within {
     width: 220px;
     background: #202325;
 }
 
+/* Logo del sidebar */
 .sidebar-logo img {
     width: 100px;
     height: 100px;
@@ -55,12 +134,14 @@ body {
                 border-radius 0.35s cubic-bezier(.68,-0.55,.27,1.55);
 }
 
+/* Logo más grande en sidebar expandido */
 .sidebar-menu.expanded .sidebar-logo img {
     width: 360px;
     height: 160px;
     border-radius: 20px;
 }
 
+/* Navegación del sidebar */
 .sidebar-nav {
     flex: 1;
     display: flex;
@@ -69,6 +150,7 @@ body {
     width: 100%;
 }
 
+/* Enlaces del sidebar */
 .sidebar-link {
     display: flex;
     align-items: center;
@@ -85,6 +167,7 @@ body {
     box-shadow: none;
 }
 
+/* Iconos de los enlaces del sidebar */
 .sidebar-link .sidebar-icon {
     font-size: 1.5em;
     min-width: 28px;
@@ -102,17 +185,20 @@ body {
     transition: stroke 0.22s;
 }
 
+/* Texto de los enlaces del sidebar (oculto por defecto) */
 .sidebar-link .sidebar-text {
     opacity: 0;
     transition: opacity 0.22s, color 0.22s;
     white-space: nowrap;
 }
 
+/* Muestra el texto al expandir el sidebar */
 .sidebar-menu:hover .sidebar-link .sidebar-text,
 .sidebar-menu:focus-within .sidebar-link .sidebar-text {
     opacity: 1;
 }
 
+/* Hover y activo en enlaces del sidebar */
 .sidebar-link:hover,
 .sidebar-link:focus {
     background: var(--sidebar-hover);
@@ -134,6 +220,7 @@ body {
     font-weight: 700;
 }
 
+/* Perfil de usuario en el sidebar */
 .sidebar-profile {
     display: flex;
     align-items: center;
@@ -165,11 +252,13 @@ body {
     white-space: nowrap;
 }
 
+/* Muestra el nombre de usuario al expandir el sidebar */
 .sidebar-menu:hover .sidebar-username,
 .sidebar-menu:focus-within .sidebar-username {
     opacity: 1;
 }
 
+/* Footer del sidebar */
 .sidebar-footer-text {
     color: #fff;
     font-size: 1.05em;
@@ -196,11 +285,11 @@ body {
 /* Ajusta el margen izquierdo del contenido según el ancho del sidebar */
 .sidebar-menu:hover ~ .page-section,
 .sidebar-menu:focus-within ~ .page-section {
-    /* Cuando el menú está expandido, mueve el contenido más a la derecha */
     margin-left: 220px;
     transition: margin-left 0.35s cubic-bezier(.68,-0.55,.27,1.55);
 }
 
+/* Secciones principales del contenido */
 .page-section {
     transition: margin-left 0.35s cubic-bezier(.68,-0.55,.27,1.55);
     margin-left: 0px; /* igual que body por defecto */
@@ -215,7 +304,7 @@ body {
     margin-left: 220px;
 }
 
-
+/* Sidebar y ajustes para pantallas pequeñas */
 @media (max-width: 700px) {
     .sidebar-menu {
         width: 60px;
@@ -369,116 +458,143 @@ body {
     }
 }
 
-/* Centrado del contenido Home */
-#home {
-    position: fixed;
-    inset: 0;
+/* Asegura que el fondo animado cubra toda la pantalla en móviles */
+@media (max-width: 800px) {
+  html, body {
+    height: 100%;
     width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    box-sizing: border-box;
+    margin: 0;
     padding: 0;
-    background: transparent;
+    overflow-x: hidden;
+  }
+  .background-animado {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    min-width: 100vw !important;
+    min-height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    z-index: 0 !important;
+    pointer-events: none;
+  }
 }
 
-/* El div y la imagen centrados */
+/* Centrado del contenido Home */
+
+/* Contenedor de la imagen principal en Home */
 #imagen1-home {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    transform: translateX(-60px);
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
 }
 
+/* Imagen principal en Home */
 .home-image {
-    max-width: 90vw;
-    max-height: 80vh;
+    max-width: 120vw;
+    max-height: 90vh;
     width: auto;
     height: auto;
     display: block;
     margin: 0 auto;
-    transform: scale(1.2);
+    object-fit: contain;
 }
 
-/* Ajusta el margen izquierdo según el sidebar */
-@media (min-width: 801px) {
-    #home {
-        margin-left: 90px; /* igual que el sidebar encogido */
-        transition: margin-left 0.35s cubic-bezier(.68,-0.55,.27,1.55);
-    }
-    .sidebar-menu:hover ~ #home,
-    .sidebar-menu:focus-within ~ #home {
-        margin-left: 220px; /* igual que el sidebar expandido */
-    }
-}
-
-/* Responsive: sin margen y centrado */
-@media (max-width: 800px) {
-    #home {
-        margin-left: 0 !important;
-        padding-top: 24px;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
+/* Sección Home centrada y con fondo transparente */
 #home {
-  --s: 100px; /* control the size */
-  --c1: #c5c5c5;
-  --c2: #35d835;
-  
-  --_s: calc(2*var(--s)) calc(2*var(--s));
-  --_g: var(--_s) conic-gradient(at 40% 40%,#0000 75%,var(--c1) 0);
-  --_p: var(--_s) conic-gradient(at 20% 20%,#0000 75%,var(--c2) 0);
-  background:
-    calc( .9*var(--s)) calc( .9*var(--s))/var(--_p),
-    calc(-.1*var(--s)) calc(-.1*var(--s))/var(--_p),
-    calc( .7*var(--s)) calc( .7*var(--s))/var(--_g),
-    calc(-.3*var(--s)) calc(-.3*var(--s))/var(--_g),
-    conic-gradient(from 90deg at 20% 20%,var(--c2) 25%,var(--c1) 0) 
-     0 0/var(--s) var(--s);
-  animation: m 3s infinite;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 0;
+    background: transparent;
+    font-family: Arial, sans-serif;
 }
-@keyframes m {
-  0% {
-   background-position: 
-    calc( .9*var(--s)) calc( .9*var(--s)),
-    calc(-.1*var(--s)) calc(-.1*var(--s)),
-    calc( .7*var(--s)) calc( .7*var(--s)),
-    calc(-.3*var(--s)) calc(-.3*var(--s)),0 0
-  }
-  25% {
-   background-position: 
-    calc(1.9*var(--s)) calc( .9*var(--s)),
-    calc(-1.1*var(--s)) calc(-.1*var(--s)),
-    calc(1.7*var(--s)) calc( .7*var(--s)),
-    calc(-1.3*var(--s)) calc(-.3*var(--s)),0 0
-  }
-  50% {
-   background-position: 
-    calc(1.9*var(--s)) calc(-.1*var(--s)),
-    calc(-1.1*var(--s)) calc( .9*var(--s)),
-    calc(1.7*var(--s)) calc(-.3*var(--s)),
-    calc(-1.3*var(--s)) calc( .7*var(--s)),0 0
-  }
-  75% {
-   background-position: 
-    calc(2.9*var(--s)) calc(-.1*var(--s)),
-    calc(-2.1*var(--s)) calc( .9*var(--s)),
-    calc(2.7*var(--s)) calc(-.3*var(--s)),
-    calc(-2.3*var(--s)) calc( .7*var(--s)),0 0
-  }
-  100% {
-   background-position: 
-    calc(2.9*var(--s)) calc(-1.1*var(--s)),
-    calc(-2.1*var(--s)) calc(1.9*var(--s)),
-    calc(2.7*var(--s)) calc(-1.3*var(--s)),
-    calc(-2.3*var(--s)) calc(1.7*var(--s)),0 0
-  }
+
+/* Tarjeta de presentación (puedes duplicar para varias tarjetas) */
+.tarjeta-bonita {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 2.5px solid #181818;
+    border-radius: 28px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+    padding: 32px 40px;
+    max-width: 600px;
+    margin: 24px auto 24px auto; /* Espacio arriba y abajo reducido */
+    min-height: 220px;
+    gap: 32px;
+}
+
+/* Imagen dentro de la tarjeta */
+.tarjeta-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 2px solid #181818;
+    background: #f5f5f5;
+    flex-shrink: 0;
+}
+
+/* Texto dentro de la tarjeta */
+.tarjeta-texto {
+    flex: 1;
+    color: #181818;
+    font-family: 'Bubblegum Sans', Arial, sans-serif;
+    font-size: 1.18em;
+    text-align: left;
+}
+
+.tarjeta-texto h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.5em;
+    color: #181818;
+}
+
+/* Contenedor de las tarjetas en Home, en columna y centradas */
+.nuevo-contenido {
+    display: flex;
+    flex-direction: column;      /* Organiza en columna */
+    align-items: center;         /* Centra horizontalmente */
+    justify-content: flex-start; /* Empieza desde arriba */
+    gap: 32px;                   /* Espacio entre tarjetas */
+    width: 100vw;
+    min-height: 60vh;
+    margin-top: 8px;             /* Menor separación arriba */
+    position: relative;
+    background: transparent;
+}
+
+/* Tarjetas responsivas en móvil */
+@media (max-width: 600px) {
+    .tarjeta-bonita {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+        gap: 18px;
+    }
+    .tarjeta-img {
+        width: 90px;
+        height: 90px;
+    }
+    .tarjeta-texto {
+        text-align: center;
+        font-size: 1em;
+    }
 }
 
