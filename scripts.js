@@ -66,5 +66,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // Navegación unificada entre secciones (sidebar y móvil)
+    const allLinks = document.querySelectorAll('.sidebar-link, .mobile-link');
+    allLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Oculta todas las secciones
+            sections.forEach(sec => sec.style.display = 'none');
+            // Muestra la sección correspondiente
+            const target = this.getAttribute('href').replace('#', '');
+            const showSection = document.getElementById(target);
+            if (showSection) showSection.style.display = 'block';
+        });
+    });
 });
 

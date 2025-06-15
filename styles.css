@@ -11,6 +11,9 @@ html, body {
 #home, #home * {
     font-family: Arial, sans-serif;
 }
+#section {
+    z-index: 150;
+}
 .sidebar-menu,
 .sidebar-link,
 .sidebar-text,
@@ -580,6 +583,140 @@ body {
     background: transparent;
 }
 
+/* Moderniza la tarjeta del formulario de contacto */
+.contact-card {
+    background: #fff;
+    border: none;
+    border-radius: 22px;
+    box-shadow:
+        -12px 0 32px -8px rgba(0,0,0,0.23), /* izquierda */
+         12px 0 32px -8px rgba(0,0,0,0.23),  /* derecha */
+         0 8px 32px rgba(34,34,34,0.23),     /* sombra inferior suave */
+         0 1.5px 8px rgba(144,249,45,0.23);  /* sombra verde suave */
+    max-width: 410px;
+    width: 95vw;
+    margin: 40px auto 0 auto;
+    padding: 32px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 200;
+    transition: box-shadow 0.2s;
+}
+
+.contact-card h2 {
+    color: #181818;
+    font-family: 'Bubblegum Sans', Arial, sans-serif;
+    font-size: 1.7em;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.contact-card form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.contact-card label {
+    color: #23272a;
+    font-weight: 600;
+    font-size: 1em;
+    margin-bottom: 2px;
+    font-family: 'Bubblegum Sans', Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.contact-card input,
+.contact-card textarea {
+    width: 100%;
+    padding: 9px 13px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    background: #f8fff2;
+    color: #181818;
+    transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+    outline: none;
+    resize: none;
+    box-shadow: 0 1px 4px rgba(144,249,45,0.04);
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+    border-color: #90f92d;
+    background: #f4ffe6;
+    box-shadow: 0 0 0 2px #90f92d44;
+}
+
+.contact-card textarea {
+    min-height: 90px;
+    max-height: 220px;
+}
+
+.contact-card button[type="submit"] {
+    margin-top: 10px;
+    background: linear-gradient(90deg, #90f92d 60%, #35d835 100%);
+    color: #181818;
+    font-family: 'Bubblegum Sans', Arial, sans-serif;
+    font-size: 1.08em;
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    padding: 11px 0;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(144,249,45,0.10);
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.13s;
+    letter-spacing: 1px;
+}
+
+.contact-card button[type="submit"]:hover,
+.contact-card button[type="submit"]:focus {
+    background: linear-gradient(90deg, #baff4d 60%, #90f92d 100%);
+    color: #111;
+    box-shadow: 0 6px 24px rgba(144,249,45,0.18);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.contact-card input[type="text"]:disabled,
+.contact-card input[type="email"]:disabled,
+.contact-card textarea:disabled {
+    background: #f0f0f0;
+    color: #aaa;
+    border-color: #e0e0e0;
+}
+
+@media (max-width: 600px) {
+    .contact-card {
+        max-width: 99vw;
+        padding: 14px 3vw 14px 3vw;
+    }
+    .contact-card h2 {
+        font-size: 1.2em;
+    }
+    .contact-card label {
+        font-size: 0.97em;
+    }
+    .contact-card input,
+    .contact-card textarea {
+        font-size: 0.98em;
+        padding: 8px 10px;
+    }
+    .contact-card button[type="submit"] {
+        font-size: 1em;
+        padding: 10px 0;
+    }
+}
+.contact-card form,
+.contact-card input,
+.contact-card textarea {
+    box-sizing: border-box;
+}
+
 /* Tarjetas responsivas en móvil */
 @media (max-width: 600px) {
     .tarjeta-bonita {
@@ -598,3 +735,11 @@ body {
     }
 }
 
+.page-section {
+    position: relative;
+    z-index: 100;
+}
+.contact-card {
+    position: relative;
+    z-index: 150;
+}

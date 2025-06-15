@@ -19,7 +19,19 @@
     </div>
     <!-- Contenedor de las tarjetas de presentación -->
     <div class="nuevo-contenido" style="display:flex;">
-        <!-- Tarjeta 1 -->
+        <div class="tarjeta-bonita" id="tarjeta-bonita2">
+            <img src="Images/2.png" alt="Imagen tarjeta" class="tarjeta-img">
+            <div class="tarjeta-texto">
+                <h2>¿Quien es somos?</h2>
+                <p>
+                    Somos un grupo de desarrolladores apasionados por los videojuegos, 
+                    dedicados a crear experiencias únicas y emocionantes. 
+                    Nuestro objetivo es llevar la diversión y la innovación 
+                    a cada uno de nuestros juegos, ofreciendo algo especial 
+                    para todos los jugadores.
+                </p>
+            </div>        
+        </div>
         <div class="tarjeta-bonita" id="tarjeta-bonita1">
             <img src="Images/Zero.png" alt="Imagen tarjeta" class="tarjeta-img">
             <div class="tarjeta-texto">
@@ -34,20 +46,6 @@
                     no dudes en contactarnos a través de nuestra sección de contacto.
                     Tambien puedes encontrar nuestras redes sociales para comunicarte con nosotros.
                     Gracias por visitarnos y esperamos que disfrutes de tu experiencia en nuestro sitio web.
-                </p>
-            </div>        
-        </div>
-        <!-- Tarjeta 2 -->
-        <div class="tarjeta-bonita" id="tarjeta-bonita2">
-            <img src="Images/2.png" alt="Imagen tarjeta" class="tarjeta-img">
-            <div class="tarjeta-texto">
-                <h2>¿Quien es somos?</h2>
-                <p>
-                    Somos un grupo de desarrolladores apasionados por los videojuegos, 
-                    dedicados a crear experiencias únicas y emocionantes. 
-                    Nuestro objetivo es llevar la diversión y la innovación 
-                    a cada uno de nuestros juegos, ofreciendo algo especial 
-                    para todos los jugadores.
                 </p>
             </div>        
         </div>
@@ -204,8 +202,28 @@
     <!-- Otras secciones del sitio -->
     <section id="about" class="page-section" style="display:none;">Contenido About US</section>
     <section id="announcements" class="page-section" style="display:none;">Contenido Announcements</section>
-    <section id="contact" class="page-section" style="display:none;">Contenido Contact</section>
-    <section id="videojuegos" class="page-section" style="display:none;">
+    <!-- Sección de contacto -->
+    <section id="contact" class="page-section" style="display: none;">
+        <div class="contact-card">
+            <h2>Contacto</h2>
+            <form name="contacto" method="POST" data-netlify="true">
+    <!-- Campo oculto para Netlify -->
+                <input type="hidden" name="form-name" value="contacto">
+    
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+    
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+    
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <section id="videojuegos" class="page-section" style="display: none;">
         <h2>Videojuegos</h2>
         <p>Aquí irá la información sobre nuestros videojuegos.</p>
     </section>
